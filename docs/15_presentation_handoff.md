@@ -18,14 +18,9 @@
 
 일부 Notebook 뷰어는 Plotly 대화형 출력(`application/vnd.plotly.v1+json`)을 렌더링하지 못해 `No renderer could be found` 안내를 표시할 수 있다. 이는 분석 실패가 아니라 뷰어 지원 문제다. 심사위원은 `../figures/`의 정적 PNG/JPEG에서 결과를 바로 확인할 수 있으며, Notebook은 코드와 실행 결과의 근거로 사용한다.
 
-### 2. 세부 근거 Notebook
+### 2. 세부 작업 파일의 보관
 
-필요할 때 통합 Notebook의 각 분석을 자세히 확인하기 위한 파일이다.
-
-- [`../notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb`](../notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb)
-- [`../notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb`](../notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb)
-- [`../notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb`](../notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb)
-- [`../notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb`](../notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb)
+세부 분석 Notebook과 중간 실행 파일은 개인 작업 폴더에 보존한다. 공개 저장소에는 심사위원이 분석 흐름과 실행 결과를 빠르게 확인할 수 있도록 통합 실행본 1개만 제공한다.
 
 ## 발표 핵심 결과
 
