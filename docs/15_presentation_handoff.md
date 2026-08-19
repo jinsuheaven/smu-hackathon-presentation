@@ -30,6 +30,20 @@
 - 제조공정 시뮬레이션: 생산량 유지, 40% 생산시간 분산 시 평균 피크 약 1.06% 감소
 - 시간대 적용 근거: 전남 지역 전력 고부하 시간과 제조공정 고부하 시간의 중첩률 80%
 
+## 발표용 그림 파일
+
+발표자료에 포함된 그림은 [`../figures/`](../figures/)에서 확인할 수 있다.
+
+- [`01_nationwide_power_facilities_map.jpeg`](../figures/01_nationwide_power_facilities_map.jpeg): 전국 전력시설 위치 분포
+- [`02_sido_demand_index.png`](../figures/02_sido_demand_index.png): 시도별 수요지수
+- [`03_manufacturing_model_performance.png`](../figures/03_manufacturing_model_performance.png): 제조공정 전력예측 성능, 팀 합의 R²=0.8995
+- [`04_production_shift_official_40pct.png`](../figures/04_production_shift_official_40pct.png): 40% 생산시간 분산 결과(137.47 → 135.40, 약 1.06% 감소)
+- [`05_region_process_overlap.png`](../figures/05_region_process_overlap.png): 전남·경북·충남의 지역-공정 고부하 시간 중첩률
+- [`06_demand_variable_correlation_heatmap.png`](../figures/06_demand_variable_correlation_heatmap.png): 수요 변수 상관관계 보조 그림
+- [`07_health_burden_correlation_nonsignificant.png`](../figures/07_health_burden_correlation_nonsignificant.png): 건강부담 상관분석 보조 그림(p=0.093503, 유의하지 않음)
+
+그림은 발표자료와 결과 확인을 위한 보조 산출물이다. 코드와 실행 결과가 있는 Notebook이 재현성의 기준이며, 그림만으로 설비용량이나 실제 선로 부하율을 주장하지 않는다. 수치가 일치하지 않는 중간 그림은 공개 목록에서 제외했다.
+
 ## 해석상 주의
 
 - 부담 점수는 설비용량이나 선로 부하율이 아닌 상대 비교 지표다.
@@ -42,4 +56,5 @@
 - 통합 Notebook 코드 셀: 8개 실행
 - 통합 Notebook 오류: 0건
 - 결론 Markdown 셀: 발표용 문안 반영
-- 상세 수치와 출처: [`14_presentation_results_summary.md`](14_presentation_results_summary.md)
+- 발표용 그림: 7개 포함
+- 그림·Notebook·발표 수치 연결 확인 완료
