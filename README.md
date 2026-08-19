@@ -6,7 +6,7 @@
 
 전력수요가 높은 지역과 송전 인프라 부담이 집중된 지역의 공간적 차이를 확인하고, 지역사회 건강부담과 제조공정 수요관리 가능성을 함께 탐색했습니다.
 
-> **빠른 확인 순서:** `figures/`의 발표용 그림 → 발표용 통합 Notebook → 세부 분석 Notebook
+> **빠른 확인 순서:** `figures/`의 발표용 그림 → 발표용 통합 Notebook
 
 ## 핵심 결과
 
@@ -26,7 +26,7 @@
 | 구분 | 이 프로젝트에서 수행한 작업 | 이 저장소에서 확인할 파일 |
 |---|---|---|
 | **Snowflake 기반** | RAW/CLEAN 적재·변환, GEOGRAPHY 변환, 전력시설 공간 결합, 시도별 수요·인프라 집계 | Snowflake에서 생성된 분석 테이블을 입력으로 사용한 발표 결과. 원본 SQL/인증정보는 공개 저장소에 포함하지 않음 |
-| **로컬 Jupyter 기반** | 건강부담 상관·유의성 검정, 면적보정 지표 시각화, 제조공정 Random Forest 예측, 생산시간 분산·Wilcoxon 검정 | `notebooks/`의 실행 Notebook |
+| **로컬 Jupyter 기반** | 건강부담 상관·유의성 검정, 면적보정 지표 시각화, 제조공정 Random Forest 예측, 생산시간 분산·Wilcoxon 검정 | `notebooks/presentation_final_analysis_executed.ipynb` |
 | **Output(결과물)** | 지도, 지수 비교, 모델 성능, 시나리오 효과 및 보조 분석 결과 | `figures/`의 정적 이미지와 Notebook 내부 실행 결과 |
 
 따라서 이 저장소의 Notebook은 Snowflake에 접속해 원천 데이터를 다시 적재하는 코드가 아니라, Snowflake 처리 결과와 공개 제조공정 데이터를 사용해 발표 결과를 재현·검증하는 코드입니다. 심사 시에는 Snowflake의 데이터 처리 역할과 로컬 후속 분석 역할을 구분해 확인할 수 있습니다.
@@ -53,12 +53,9 @@ GitHub나 VS Code에서 Notebook의 Plotly 지도가 렌더링되지 않는 경�
 | [`06_demand_variable_correlation_heatmap.png`](figures/06_demand_variable_correlation_heatmap.png) | 전력수요 후보 변수 상관관계 |
 | [`07_health_burden_correlation_nonsignificant.png`](figures/07_health_burden_correlation_nonsignificant.png) | 건강부담 상관분석 보조 결과 |
 
-### 3. 세부 분석 Notebook
+### 3. 세부 작업 파일의 보관
 
-- **[Snowflake 결과 후속 분석]** [`notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb`](notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb): 전국 전력시설 공간 분포
-- **[Snowflake 결과 후속 분석]** [`notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb`](notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb): 시도별 면적보정 수요·송전 인프라 불균형
-- **[로컬 통계분석]** [`notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb`](notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb): 시도별 건강부담 보조 분석
-- **[로컬 AI·시뮬레이션]** [`notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb`](notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb): 제조공정 전력예측 및 생산시간 분산 시뮬레이션
+세부 분석 Notebook과 중간 실행 파일은 개인 작업 폴더에 보존하고, 공개 저장소에는 심사위원이 흐름과 결과를 한 번에 확인할 수 있는 통합 실행본만 제공합니다. 공개 패키지의 재현 결과는 통합 Notebook과 `figures/`의 정적 그림을 기준으로 합니다.
 
 ## Notebook에서 지도가 보이지 않을 때
 
@@ -81,7 +78,7 @@ GitHub나 VS Code에서 Notebook의 Plotly 지도가 렌더링되지 않는 경�
 
 ```text
 figures/    발표용 정적 결과 그림
-notebooks/  실행 결과가 포함된 발표·세부 분석 Notebook
+notebooks/  실행 결과가 포함된 발표용 통합 Notebook 1개
 docs/       발표용 파일 안내 및 인수인계 문서
 ```
 
