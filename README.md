@@ -19,6 +19,18 @@
 
 전력시설 공간 분포 확인 → 시도별 수요·면적보정 송전 인프라 비교 → 건강부담 보조 분석 → 제조공정 전력예측 → 생산시간 분산 시뮬레이션 → 지역 적용 가능성 제안
 
+## 작업 환경별 구분
+
+이 저장소는 **Snowflake에서 구축한 분석 결과를 로컬 Jupyter에서 후속 분석·검증·시각화한 발표용 패키지**입니다. 파일을 환경별로 구분하면 다음과 같습니다.
+
+| 구분 | 이 프로젝트에서 수행한 작업 | 이 저장소에서 확인할 파일 |
+|---|---|---|
+| **Snowflake 기반** | RAW/CLEAN 적재·변환, GEOGRAPHY 변환, 전력시설 공간 결합, 시도별 수요·인프라 집계 | Snowflake에서 생성된 분석 테이블을 입력으로 사용한 발표 결과. 원본 SQL/인증정보는 공개 저장소에 포함하지 않음 |
+| **로컬 Jupyter 기반** | 건강부담 상관·유의성 검정, 면적보정 지표 시각화, 제조공정 Random Forest 예측, 생산시간 분산·Wilcoxon 검정 | `notebooks/`의 실행 Notebook |
+| **Output(결과물)** | 지도, 지수 비교, 모델 성능, 시나리오 효과 및 보조 분석 결과 | `figures/`의 정적 이미지와 Notebook 내부 실행 결과 |
+
+따라서 이 저장소의 Notebook은 Snowflake에 접속해 원천 데이터를 다시 적재하는 코드가 아니라, Snowflake 처리 결과와 공개 제조공정 데이터를 사용해 발표 결과를 재현·검증하는 코드입니다. 심사 시에는 Snowflake의 데이터 처리 역할과 로컬 후속 분석 역할을 구분해 확인할 수 있습니다.
+
 ## 심사위원이 먼저 볼 파일
 
 ### 1. 발표용 통합 Notebook
@@ -43,10 +55,10 @@ GitHub나 VS Code에서 Notebook의 Plotly 지도가 렌더링되지 않는 경�
 
 ### 3. 세부 분석 Notebook
 
-- [`notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb`](notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb): 전국 전력시설 공간 분포
-- [`notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb`](notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb): 시도별 면적보정 수요·송전 인프라 불균형
-- [`notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb`](notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb): 시도별 건강부담 보조 분석
-- [`notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb`](notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb): 제조공정 전력예측 및 생산시간 분산 시뮬레이션
+- **[Snowflake 결과 후속 분석]** [`notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb`](notebooks/power_facility_overview_presentation_final_review_20260819_executed.ipynb): 전국 전력시설 공간 분포
+- **[Snowflake 결과 후속 분석]** [`notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb`](notebooks/sido_area_adjusted_demand_infrastructure_v5_final_review_20260819_executed.ipynb): 시도별 면적보정 수요·송전 인프라 불균형
+- **[로컬 통계분석]** [`notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb`](notebooks/regional_health_burden_analysis_v2_final_review_20260819_executed.ipynb): 시도별 건강부담 보조 분석
+- **[로컬 AI·시뮬레이션]** [`notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb`](notebooks/manufacturing_ai_peak_team_clean_export_final_2021_executed.ipynb): 제조공정 전력예측 및 생산시간 분산 시뮬레이션
 
 ## Notebook에서 지도가 보이지 않을 때
 
